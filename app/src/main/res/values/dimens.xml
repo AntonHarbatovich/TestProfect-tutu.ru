@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Spacing (padding or margin) -->
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">16dp</dimen>
+
+    <!-- General Sizes -->
+    <dimen name="size_zero">0dp</dimen>
+    <dimen name="size_40">40dp</dimen>
+    <dimen name="size_60">60dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_xs">14sp</dimen>
+    <dimen name="text_size_s">16sp</dimen>
+</resources>
