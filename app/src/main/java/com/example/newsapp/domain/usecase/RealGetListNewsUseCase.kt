@@ -11,7 +11,10 @@ class RealGetListNewsUseCase(
     private val context: Context
 ) : GetListNewsUseCase {
 
-    override suspend fun invoke(apiKey: String, country: String): Result<List<NewsResponse>> =
-        repository.getListNews(context.getString(R.string.api_key), country)
+    override suspend fun invoke(): Result<NewsResponse> =
+        repository.getListNews(
+            context.getString(R.string.api_key),
+            context.getString(R.string.default_country)
+        )
 
 }

@@ -11,5 +11,5 @@ interface NewsApi {
     suspend fun getListNews(
         @Query("apiKey") apiKey: String,
         @Query("country") country: String
-    ) :Response<List<NewsResponse>>
+    ) :Response<NewsResponse>
 }

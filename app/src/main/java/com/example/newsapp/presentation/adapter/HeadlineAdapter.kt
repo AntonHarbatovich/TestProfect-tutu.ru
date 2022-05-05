@@ -6,10 +6,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.R
 import com.example.newsapp.data.api.entity.response.Article
+import com.example.newsapp.data.api.entity.response.NewsResponse
 
 class HeadlineAdapter : RecyclerView.Adapter<HeadlineViewHolder>() {
 
-    private val listArticles: List<Article> = listOf()
+    private var listArticles: List<Article> = listOf()
+
+    fun setListNews(list:List<Article>){
+        listArticles = list
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadlineViewHolder {
         val inflater = LayoutInflater.from(parent.context)

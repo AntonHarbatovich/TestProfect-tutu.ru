@@ -11,7 +11,7 @@ class RealNewsRepository(
     private val api: NewsApi
 ) : NewsRepository {
 
-    override suspend fun getListNews(apiKey: String, country: String): Result<List<NewsResponse>> =
+    override suspend fun getListNews(apiKey: String, country: String): Result<NewsResponse> =
         apiCall(IO) {
             api.getListNews(apiKey, country).body()!!
         }

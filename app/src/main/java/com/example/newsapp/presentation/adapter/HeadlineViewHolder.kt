@@ -11,6 +11,7 @@ class HeadlineViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(article: Article) {
+
         binding.itemHeadlineTitle.text = article.title
         binding.itemHeadlineSource.text = article.source.name
         loadImage(article.urlToImage)
