@@ -1,4 +1,4 @@
-package com.example.newsapp.api
+package com.example.newsapp.di
 
 import com.example.newsapp.data.api.http.createHttpClient
 import com.example.newsapp.data.api.http.createNewsApi
