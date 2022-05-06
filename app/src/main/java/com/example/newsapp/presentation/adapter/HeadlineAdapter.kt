@@ -8,14 +8,18 @@ import com.example.newsapp.R
 import com.example.newsapp.data.api.entity.response.Article
 import com.example.newsapp.data.api.entity.response.NewsResponse
 
-class HeadlineAdapter : RecyclerView.Adapter<HeadlineViewHolder>() {
+class HeadlineAdapter(
+    private val onArticleClickListener: (Article) -> Unit
+) : RecyclerView.Adapter<HeadlineViewHolder>() {
 
     private var listArticles: List<Article> = listOf()
 
-    fun setListNews(list:List<Article>){
+    fun setListNews(list: List<Article>) {
         listArticles = list
         notifyDataSetChanged()
     }
+
+    fun onArticleClicked(article: Article) = onArticleClickListener(article)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadlineViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -34,4 +38,5 @@ class HeadlineAdapter : RecyclerView.Adapter<HeadlineViewHolder>() {
     }
 
     override fun getItemCount(): Int = listArticles.size
+
 }

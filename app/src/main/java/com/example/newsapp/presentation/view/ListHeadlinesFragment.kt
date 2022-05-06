@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapp.R
 import com.example.newsapp.data.api.entity.response.NewsResponse
@@ -20,7 +21,10 @@ class ListHeadlinesFragment : Fragment() {
     private lateinit var binding: FragmentListHeadlinesBinding
 
     private val viewModel: ListHeadlinesViewModel by viewModel()
-    private val adapter = HeadlineAdapter()
+
+    private val adapter = HeadlineAdapter { article ->
+        viewModel.onArticleClicked(article)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,8 +51,14 @@ class ListHeadlinesFragment : Fragment() {
         viewModel.getEvent().observe(viewLifecycleOwner) { event ->
             when (event) {
                 is ListHeadlinesEvent.GetListNews -> setListNews(event.news)
+                is ListHeadlinesEvent.ArticleClicked -> openFragmentNews(event.bundle)
             }
         }
+    }
+
+    private fun openFragmentNews(bundle: Bundle) {
+
+        findNavController().navigate(R.id.action_listHeadlinesFragment_to_newsFragment, bundle)
     }
 
     private fun setListNews(news: NewsResponse) {
