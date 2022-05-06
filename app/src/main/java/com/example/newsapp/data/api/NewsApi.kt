@@ -10,6 +10,8 @@ interface NewsApi {
     @GET("top-headlines")
     suspend fun getListNews(
         @Query("apiKey") apiKey: String,
-        @Query("country") country: String
+        @Query("country") country: String,
+
+        @Query("pageSize") pageSize:Int
     ) :Response<NewsResponse>
 }

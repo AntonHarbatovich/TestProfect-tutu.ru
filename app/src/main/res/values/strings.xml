@@ -2,4 +2,8 @@
     <string name="app_name">NewsApp</string>
     <string name="api_key">702b09d2cd8f4adc95061250ce3c1267</string>
     <string name="default_country">ru</string>
+    <string name="title_news">NEWS</string>
+    <string name="title_news_details">NEWS DETAILS</string>
+    <string name="unknown_author">Неизвестный автор</string>
+    <string name="unknown_description">Описание отсутствует</string>
 </resources>

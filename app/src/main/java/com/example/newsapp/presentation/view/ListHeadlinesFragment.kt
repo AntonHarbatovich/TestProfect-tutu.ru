@@ -57,8 +57,8 @@ class ListHeadlinesFragment : Fragment() {
     }
 
     private fun openFragmentNews(bundle: Bundle) {
-
         findNavController().navigate(R.id.action_listHeadlinesFragment_to_newsFragment, bundle)
+        viewModel.resetEvent()
     }
 
     private fun setListNews(news: NewsResponse) {
@@ -69,6 +69,7 @@ class ListHeadlinesFragment : Fragment() {
     private fun setAdapter() {
         val layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
         binding.fragmentListHeadlinesRecyclerView.layoutManager = layoutManager
         binding.fragmentListHeadlinesRecyclerView.adapter = adapter
     }

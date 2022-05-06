@@ -13,6 +13,6 @@ class RealNewsRepository(
 
     override suspend fun getListNews(apiKey: String, country: String): Result<NewsResponse> =
         apiCall(IO) {
-            api.getListNews(apiKey, country).body()!!
+            api.getListNews(apiKey, country, 100).body()!!
         }
 }

@@ -13,7 +13,7 @@ class NewsViewModel(
     private val args: Bundle
 ) : ViewModel() {
 
-    private val event = MutableLiveData<NewsEvent>()
+    private val event = MutableLiveData<NewsEvent?>()
 
     init {
         setArticle()
@@ -22,6 +22,14 @@ class NewsViewModel(
     private fun setArticle() {
         val article: Article? = args.getParcelable(KEY_ARTICLE)
         event.value = NewsEvent.SetArticle(article!!)
+    }
+
+    fun onBackClicked(){
+        event.value = NewsEvent.BackClicked
+    }
+
+    fun resetEvent() {
+        event.value = null
     }
 
     fun getEvent(): LiveData<NewsEvent?> = event
