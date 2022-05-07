@@ -11,7 +11,6 @@ interface NewsApi {
     suspend fun getListNews(
         @Query("apiKey") apiKey: String,
         @Query("country") country: String,
-
         @Query("pageSize") pageSize:Int
     ) :Response<NewsResponse>
 }

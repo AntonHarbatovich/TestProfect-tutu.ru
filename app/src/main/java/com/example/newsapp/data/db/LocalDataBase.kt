@@ -1,0 +1,13 @@
+package com.example.newsapp.data.db
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.newsapp.data.db.dao.LocalDao
+import com.example.newsapp.data.db.entity.ArticleEntity
+
+@Database(entities = [ArticleEntity::class], version = 1)
+@TypeConverters(Converter::class)
+abstract class LocalDataBase : RoomDatabase() {
+    abstract fun localDao(): LocalDao
+}

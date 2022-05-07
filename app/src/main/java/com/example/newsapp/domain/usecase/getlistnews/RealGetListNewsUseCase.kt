@@ -1,4 +1,4 @@
-package com.example.newsapp.domain.usecase
+package com.example.newsapp.domain.usecase.getlistnews
 
 import android.content.Context
 import com.example.newsapp.R

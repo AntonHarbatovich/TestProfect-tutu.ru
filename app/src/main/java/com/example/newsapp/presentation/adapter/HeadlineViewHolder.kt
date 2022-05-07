@@ -25,7 +25,7 @@ class HeadlineViewHolder(
     private fun setFields() {
         if (article != null) {
             binding.itemHeadlineTitle.text = article!!.title
-            binding.itemHeadlineSource.text = article!!.source.name
+            binding.itemHeadlineSource.text = article!!.source!!.name
             loadImage(article!!.urlToImage)
         }
     }

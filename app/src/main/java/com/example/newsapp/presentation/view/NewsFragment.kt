@@ -28,7 +28,7 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_news,
@@ -50,6 +50,7 @@ class NewsFragment : Fragment() {
             when (event) {
                 is NewsEvent.SetArticle -> setFields(event.article)
                 is NewsEvent.BackClicked -> getBack()
+                else -> {}
             }
         }
     }
@@ -62,12 +63,5 @@ class NewsFragment : Fragment() {
 
     private fun setFields(article: Article) {
         binding.article = article
-        formatDate(article.publishedAt)
-    }
-
-    private fun formatDate(date: String) {
-        val result = date.split("T")
-        val newDate = "${result[0]} ${result[1].substring(0, result[1].lastIndexOf(":"))} "
-        binding.fragmentNewsTime.text = newDate
     }
 }

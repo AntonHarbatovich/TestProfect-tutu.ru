@@ -9,7 +9,10 @@ val koinModuleViewModel = module {
 
     viewModel {
         ListHeadlinesViewModel(
-            getListNewsUseCase = get()
+            getListNewsUseCase = get(),
+            getAllArticlesUseCase = get(),
+            insertAllArticlesUseCase = get(),
+            deleteAllArticlesUseCase = get()
         )
     }
 

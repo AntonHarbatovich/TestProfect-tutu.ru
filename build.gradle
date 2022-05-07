@@ -4,6 +4,7 @@ buildscript {
         kotlin_version = "1.6.21"
         koin_version = "3.1.2"
         nav_version = "2.4.2"
+        roomVersion = "2.4.2"
     }
     repositories {
         google()
