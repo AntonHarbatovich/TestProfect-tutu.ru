@@ -8,13 +8,14 @@ import com.example.newsapp.domain.repository.NewsRepository
 
 class RealGetListNewsUseCase(
     private val repository: NewsRepository,
-    private val context: Context
+    private val apiKey: String,
+    private val defaultCountry:String
 ) : GetListNewsUseCase {
 
     override suspend fun invoke(): Result<NewsResponse> =
         repository.getListNews(
-            context.getString(R.string.api_key),
-            context.getString(R.string.default_country)
+            apiKey = apiKey,
+            country = defaultCountry
         )
 
 }

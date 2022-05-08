@@ -1,5 +1,6 @@
 package com.example.newsapp.di
 
+import com.example.newsapp.R
 import com.example.newsapp.domain.usecase.deleteallarticles.DeleteAllArticlesUseCase
 import com.example.newsapp.domain.usecase.deleteallarticles.RealDeleteAllArticlesUseCase
 import com.example.newsapp.domain.usecase.getallarticles.GetAllArticlesUseCase
@@ -16,7 +17,8 @@ val koinModuleUseCase = module {
     single<GetListNewsUseCase> {
         RealGetListNewsUseCase(
             repository = get(),
-            context = androidContext()
+            apiKey = androidContext().getString(R.string.api_key),
+            defaultCountry = androidContext().getString(R.string.default_country)
         )
     }
 
